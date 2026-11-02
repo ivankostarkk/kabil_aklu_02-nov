@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>For My Aklu &#128156; With Love, Kabi</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <!-- Three.js for Soft Lavender 3D Petals & Orbs -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 3D Soft Ambient Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Floating Audio Player Controller -->
+  <div class="music-pill" id="musicPill" title="Tap to Play/Pause">
+    <div class="music-icon-wrap">
+      <i class="fa-solid fa-compact-disc disc-spinning" id="musicDisc"></i>
+    </div>
+    <div class="music-info">
+      <span class="music-title">Our Melody &#128156;</span>
+      <span class="music-artist" id="musicStatus">Tap to Play</span>
+    </div>
+    <button class="music-btn" id="playBtn" aria-label="Toggle music">
+      <i class="fa-solid fa-play" id="playIcon"></i>
+    </button>
+  </div>
+
+  <!-- Romantic acoustic piano audio -->
+  <audio id="loveAudio" loop preload="auto">
+    <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-moment-piano-solo-654.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- Soft light cursor glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="page-container">
+
+    <!-- HERO SECTION -->
+    <section class="section hero-section" id="hero">
+      <div class="hero-badge">
+        <span>&#10024; A Little Universe For Akalya &#10024;</span>
+      </div>
+      
+      <div class="names-container">
+        <h1 class="couple-title">
+          <span class="name kabi">Kabi</span>
+          <span class="heart-pulse"><i class="fa-solid fa-heart"></i></span>
+          <span class="name aklu">Aklu</span>
+        </h1>
+      </div>
+
+      <p class="hero-subtitle">
+        Hey <b>Akalya</b>, you bring peace and soft sunshine into my world every single day.
+      </p>
+
+      <!-- Romantic Lavender Envelope -->
+      <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope" id="envelope">
+          <div class="front flap"></div>
+          <div class="front pocket"></div>
+          <div class="letter">
+            <div class="letter-text">
+              <h3>To My Precious Aklu &#127807;</h3>
+              <p>You make my heart smile in ways nobody else ever could.</p>
+              <span class="letter-sign">- Yours always, Kabi &#128156;</span>
+            </div>
+          </div>
+          <div class="envelope-seal">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+        <p class="tap-hint"><i class="fa-regular fa-hand-pointer"></i> Tap the envelope to open love letter!</p>
+      </div>
+
+      <div class="scroll-indicator">
+        <span>Scroll down to see our world</span>
+        <i class="fa-solid fa-chevron-down bouncing"></i>
+      </div>
+    </section>
+
+    <!-- 3D CAROUSEL GALLERY -->
+    <section class="section gallery-section" id="gallery">
+      <div class="section-header">
+        <span class="section-tag">Our Precious Memories</span>
+        <h2 class="section-title">Moments I'll Never Forget</h2>
+        <p class="section-desc">Every single moment with you is etched forever in my heart &#128156;</p>
+      </div>
+
+      <!-- 3D Carousel container -->
+      <div class="carousel-3d-wrapper">
+        <div class="carousel-3d" id="carousel3D">
+          <!-- Memory 1 -->
+          <div class="carousel-card" style="--i: 0;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?auto=format&fit=crop&w=700&q=80" alt="Alangulam Mountain Temple" loading="lazy" />
+                <div class="card-overlay">
+                  <span>Where It All Began</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>First Sight at Malai Kovil</h4>
+                <p>"The very first time my eyes met yours at the Alangulam hill temple... time stopped, and I knew you were the one."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 2 -->
+          <div class="carousel-card" style="--i: 1;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=600&q=80" alt="Tiruchendur Temple Coast" loading="lazy" />
+                <div class="card-overlay">
+                  <span>Sacred Blessings</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>Tiruchendur with Family</h4>
+                <p>"Seeing you amidst the holy sea breeze and our families... my heart felt so complete and deeply blessed."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 3 -->
+          <div class="carousel-card" style="--i: 2;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80" alt="Kitchen Cozy Cooking" loading="lazy" />
+                <div class="card-overlay">
+                  <span>That Killer Look</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>The Kitchen Glance</h4>
+                <p>"You were just cutting potatoes, but that one mischievous look from your eyes straight up stole my breath away!"</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 4 -->
+          <div class="carousel-card" style="--i: 3;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=600&q=80" alt="Movie Theater Date" loading="lazy" />
+                <div class="card-overlay">
+                  <span>Best Day Ever</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>Our Movie Date</h4>
+                <p>"Sitting next to you during the movie... honestly the happiest and most unforgettable day of my entire life."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 5 -->
+          <div class="carousel-card" style="--i: 4;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80" alt="Wedding Celebration" loading="lazy" />
+                <div class="card-overlay">
+                  <span>Secret Stares</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>Sighting You at Anu's Wedding</h4>
+                <p>"Dressed up and looking like pure heaven... I couldn't take my eyes off you for even a single second."</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Memory 6 -->
+          <div class="carousel-card" style="--i: 5;">
+            <div class="card-inner">
+              <div class="img-box">
+                <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=600&q=80" alt="Romantic Bike Ride" loading="lazy" />
+                <div class="card-overlay">
+                  <span>Special Treat</span>
+                </div>
+              </div>
+              <div class="card-content">
+                <h4>First Bike Ride & Iniya Treat</h4>
+                <p>"Our very first bike ride together to Iniya restaurant for Mani's treat... the wind, the ride, and you with me."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-controls">
+        <button class="ctrl-btn" id="prevBtn" aria-label="Previous"><i class="fa-solid fa-arrow-left"></i> Prev</button>
+        <button class="ctrl-btn" id="nextBtn" aria-label="Next">Next <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+    </section>
+
+    <!-- REASONS WHY I ADORE YOU (3D FLIP CARDS) -->
+    <section class="section reasons-section" id="reasons">
+      <div class="section-header">
+        <span class="section-tag">From Kabi's Heart</span>
+        <h2 class="section-title">Why Aklu Is So Special</h2>
+        <p class="section-desc">Tap each card to reveal my secrets &#128156;</p>
+      </div>
+
+      <div class="reasons-grid">
+        <!-- Flip Card 1 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-card">
+              <div class="card-icon"><i class="fa-solid fa-spa"></i></div>
+              <h3>Your Calming Presence</h3>
+              <p class="hint-flip">Tap to reveal secret &#8635;</p>
+            </div>
+            <div class="flip-card-back glass-card">
+              <h3>&#127800; Pure Serenity</h3>
+              <p>No matter how chaotic the day is, talking to you instantly brings peace, like a calm breeze.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 2 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-card">
+              <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+              <h3>Your Pure Heart</h3>
+              <p class="hint-flip">Tap to reveal secret &#8635;</p>
+            </div>
+            <div class="flip-card-back glass-card">
+              <h3>&#10024; Genuine & Rare</h3>
+              <p>Your kindness and caring soul are rare treasures in this world. Never forget how special you are, Akalya.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 3 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-card">
+              <div class="card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+              <h3>Your Sweet Smile</h3>
+              <p class="hint-flip">Tap to reveal secret &#8635;</p>
+            </div>
+            <div class="flip-card-back glass-card">
+              <h3>&#128171; Brightest Light</h3>
+              <p>When you smile, honestly, nothing else matters. It's effortlessly my favorite view in the world.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Flip Card 4 -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front glass-card">
+              <div class="card-icon"><i class="fa-solid fa-infinity"></i></div>
+              <h3>Always Here For You</h3>
+              <p class="hint-flip">Tap to reveal secret &#8635;</p>
+            </div>
+            <div class="flip-card-back glass-card">
+              <h3>&#128156; By Your Side</h3>
+              <p>Through every dream, every smile, and every tough moment, Kabi will always be right here for Aklu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE COMPASS / PLAYFUL PROPOSAL -->
+    <section class="section question-section" id="interactive">
+      <div class="glass-card question-box">
+        <div class="floating-mascot">
+          <i class="fa-solid fa-heart mascot-icon"></i>
+        </div>
+        <h2>One Urgent Question For Aklu...</h2>
+        <p class="question-sub">Will you let Kabi take you out on the dreamiest, sweetest date soon?</p>
+        
+        <div class="interactive-btns">
+          <button class="choice-btn yes-btn" id="yesBtn">
+            <i class="fa-solid fa-heart"></i> Yes, 1000x YES!
+          </button>
+          <button class="choice-btn no-btn" id="noBtn">
+            No way &#128541;
+          </button>
+        </div>
+
+        <p class="runaway-hint" id="runawayHint"></p>
+      </div>
+    </section>
+
+    <!-- SURPRISE MODAL -->
+    <div class="celebration-modal" id="celebrationModal">
+      <div class="modal-box glass-card">
+        <button class="close-modal-btn" id="closeModal" aria-label="Close">&times;</button>
+        <div class="modal-celebrate-icon">&#128156; &#10024; &#127800;</div>
+        <h2 class="modal-heading">YAAAY! Best Answer Ever!</h2>
+        <p class="modal-para">
+          Aklu said YES! Get ready for unlimited smiles, treats, laughs, and pampering from Kabi!
+        </p>
+        <div class="couple-badge">
+          <span>Kabi &#128156; Aklu Forever</span>
+        </div>
+        <div>
+          <button class="magic-sparkle-btn" id="moreHeartsBtn">
+            <i class="fa-solid fa-sparkles"></i> Shower More Lavender Magic!
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p>Handcrafted with endless love by <b>Kabi</b> for <b>Aklu</b> &#128156;</p>
+      <span class="year-stamp">Forever & Always • 2026</span>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
